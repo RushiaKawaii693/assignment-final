@@ -39,18 +39,9 @@
 ---
 
 ## Cost and Operational Considerations
+In this architecture, the components most likely to drive costs are the always‑on compute resources and the managed database. Hosting the Flask application in Azure App Service requires continuous availability, which means a steady baseline cost, and Azure SQL Database can become expensive depending on the tier and storage size selected. Storage in Azure Blob is relatively inexpensive, especially when lifecycle policies are applied to move older files into cooler or archive tiers, while serverless functions are highly cost‑efficient because they only consume resources when triggered. Analytics workloads, such as scheduled Azure ML notebooks, can also add significant expense if large datasets or high‑end compute tiers are used, but these costs are controllable by limiting runtime and scheduling jobs during off‑peak hours.
 
-- **Cost Drivers:**  
-  - Azure SQL Database and App Service (always-on compute) are the largest recurring costs.  
-  - Blob Storage is inexpensive at low volume.  
-  - Azure Functions are cost-efficient since they scale to zero when idle.  
-  - Azure ML Notebook incurs compute costs only during scheduled runs.  
-- **Optimization:**  
-  - Use serverless Functions for ETL instead of VMs to minimize idle costs.  
-  - Deploy App Service at the lowest tier that supports managed identity.  
-  - Choose SQL serverless tier with auto-pause to reduce costs.  
-  - Apply lifecycle policies to move raw blobs to cool/archive storage.  
-- **Student Budget:** Keep deployment in a single region, use free/basic tiers, and limit ML runtime. Focus on demonstrating architecture rather than scaling to production workloads.
+To keep the project within a student budget or free tier, the design favors serverless and scheduled jobs over always‑on virtual machines. Azure Functions are used for ETL tasks so that compute scales to zero when idle, and the SQL Database can be deployed in a serverless tier with auto‑pause to reduce costs when not in use. The App Service hosting Flask can be kept at the lowest tier that still supports managed identity, and storage lifecycle rules ensure that raw data is moved to cheaper tiers over time. By combining these strategies, the solution demonstrates the full architecture while remaining affordable and practical for a student environment.
 
 ---
 
