@@ -1,44 +1,41 @@
+## High-Level Architecture Diagram
+
 ```mermaid
 flowchart LR
-    subgraph Client
-        UI[Flask Web UI]
-    end
-
     subgraph Frontend
-        APISvc[Azure App Service (Flask)]
-    end
-
-    subgraph Storage
-        Blob[Azure Blob Storage]
-        EG[Event Grid]
+        UI[Flask Web App / API]
     end
 
     subgraph Compute
-        Func[Azure Functions (ETL)]
-        MLN[Azure ML Notebook]
+        VM[Azure VM or Container Apps]
+        Func[Azure Functions (Serverless ETL)]
     end
 
     subgraph Data
+        Blob[Azure Blob Storage]
         SQL[Azure SQL Database]
-        KV[Azure Key Vault]
     end
 
-    subgraph OpsIdentity
+    subgraph Analytics
+        ML[Azure ML Notebook / Analytics Job]
+    end
+
+    subgraph Ops
         Mon[Azure Monitor + Log Analytics]
-        Entra[Microsoft Entra ID]
+        Entra[Microsoft Entra ID (Identity/RBAC)]
+        KV[Azure Key Vault (Secrets)]
     end
 
-    UI --> APISvc
-    APISvc --> Blob
-    Blob --> EG
-    EG --> Func
+    %% Connections
+    UI --> Blob
+    UI --> SQL
+    Blob --> Func
     Func --> SQL
-    MLN --> SQL
-    APISvc --> SQL
-    KV --- APISvc
+    ML --> SQL
+    UI --> ML
+    KV --- UI
     KV --- Func
-    Mon --> APISvc
+    Mon --> UI
     Mon --> Func
-    Entra --> APISvc
+    Entra --> UI
     Entra --> SQL
-    Entra --> MLN
