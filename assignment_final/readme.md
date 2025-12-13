@@ -3,7 +3,6 @@
 - **Architecture Diagram (architecture_diagram.png or Mermaid in architecture_plan.md):** Shows how frontend, compute, storage, database, and optional AI components fit together.
 - **Architecture Plan (architecture_plan.md):** Explains service mapping, data flow, security/governance, and cost considerations.
 - **Reflection (reflection.md):** Discusses confidence areas, uncertainties, alternative architectures, and next steps.
-- **Prototype (prototype/):** Optional Flask app demonstrating integration with at least one cloud resource.
 
 ## Instructions
 1. Review `use_case.md` to understand the healthcare scenario.
