@@ -28,13 +28,9 @@
 
 ## Security, Identity, and Governance Basics
 
-- **Credentials:** All sensitive values (SQL connection strings, storage SAS tokens) are stored in **Azure Key Vault**. Flask and Functions use **Managed Identity** to retrieve secrets at runtime. No secrets are hardcoded.  
-- **Access Controls / RBAC:**  
-  - Clinicians: App Service access via Entra ID, read-only DB role.  
-  - Data engineers: Contributor role on Functions/Storage, writer role on SQL.  
-  - Auditors: Monitoring Reader role for logs/metrics.  
-  - Enforce least privilege and container-level ACLs on Blob Storage.  
-- **PHI Handling:** In student/testing environments, use synthetic or pseudonymized IDs. For production, segregate environments, enable private endpoints, encrypt data at rest/in transit, and maintain audit logs. No real PHI is exposed in public or personal accounts.
+Credential management in this design would rely on secure practices such as storing sensitive values in Azure Key Vault and retrieving them at runtime through managed identities. This ensures that connection strings, storage tokens, and other secrets are never hardcoded or exposed in configuration files. Environment variables may be used for non‑sensitive settings, but all critical credentials would be centrally managed, rotated, and audited through the vault. Role‑based access control (RBAC) would be enforced via Microsoft Entra ID, assigning clinicians read‑only roles for accessing dashboards and summary data, engineers contributor rights for compute and storage resources, and auditors monitoring‑only roles for logs and metrics. Least privilege principles would be applied consistently, including container‑level ACLs on Blob Storage and database roles mapped to Azure AD identities.
+
+To avoid exposing protected health information (PHI) in public environments, the system would use synthetic or pseudonymized identifiers during testing and student projects, ensuring that no real patient data is ever uploaded. In production scenarios, environments would be segregated, private endpoints would be enabled for databases and storage, and encryption would be enforced both at rest and in transit. Comprehensive audit logging would provide traceability, and strict governance policies would ensure that PHI remains confined to secure, compliant environments rather than public or personal accounts.
 
 ---
 
