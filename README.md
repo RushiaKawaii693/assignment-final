@@ -1,6 +1,6 @@
 
 ## Deliverables
-- Use Case (use_case.md): Outlines the healthcare scenario, problem description, data sources, and workflow.
+- **Use Case (use_case.md): Outlines the healthcare scenario, problem description, data sources, and workflow.
 - The architecture diagram (architecture_diagram.png or Mermaid in architecture_plan.md) depicts how the frontend, computation, storage, database, and optional AI components work together.
 - The Architecture Plan (architecture_plan.md) describes service mapping, data flow, security/governance, and cost concerns.
 - Reflection (reflection.md): Covers confidence areas, uncertainties, alternative architectures, and next actions.
