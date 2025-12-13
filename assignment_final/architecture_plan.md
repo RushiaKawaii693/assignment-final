@@ -8,7 +8,7 @@ flowchart LR
 
     subgraph Compute
         VM[Azure VM or Container Apps]
-        Func[Azure Functions (Serverless ETL)]
+        Func[Azure Functions - Serverless ETL]
     end
 
     subgraph Data
@@ -20,10 +20,10 @@ flowchart LR
         ML[Azure ML Notebook / Analytics Job]
     end
 
-    subgraph Ops
+    subgraph OpsIdentity
         Mon[Azure Monitor + Log Analytics]
-        Entra[Microsoft Entra ID (Identity/RBAC)]
-        KV[Azure Key Vault (Secrets)]
+        Entra[Microsoft Entra ID]
+        KV[Azure Key Vault]
     end
 
     %% Connections
