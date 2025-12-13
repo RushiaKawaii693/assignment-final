@@ -1,7 +1,7 @@
 # Use case: Remote diabetes monitoring mini-pipeline
 
 ## Problem statement
-Diabetes clinics need timely, low-friction visibility into patients’ home glucose and activity data to prioritize outreach. Today, device data is fragmented across apps and portals, and staff sift through CSV exports manually. The goal is a lightweight cloud pipeline that ingests patient-generated health data (PGHD) daily, aggregates risk flags (e.g., frequent hypoglycemia, sustained hyperglycemia, missed readings), and presents a simple triage dashboard for care teams. 
+Diabetes clinics require rapid, low-friction access to patients' home glucose and activity data in order to focus outreach. Device data is currently dispersed among apps and sites, and staff manually sort through CSV exports. The goal is to create a lightweight cloud pipeline that ingests patient-generated health data (PGHD) on a daily basis, combines risk flags (such as frequent hypoglycemia, sustained hyperglycemia, and missed readings), and provides care teams with a simple triage display.
 
 **Users:** Clinicians (MD/NP/PA), diabetes educators, care coordinators, and clinic managers.  
 **Value:** Faster triage and outreach, reduced manual processing, and defensible audit trails for compliance and quality reporting.
