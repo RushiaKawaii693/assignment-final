@@ -1,7 +1,3 @@
-# Architecture and implementation plan
-
-## High-level diagram (Mermaid)
-
 ```mermaid
 flowchart LR
     subgraph Client
@@ -19,7 +15,7 @@ flowchart LR
 
     subgraph Compute
         Func[Azure Functions (ETL)]
-        MLN[Azure ML (Notebook/Scheduled job)]
+        MLN[Azure ML Notebook]
     end
 
     subgraph Data
@@ -27,7 +23,7 @@ flowchart LR
         KV[Azure Key Vault]
     end
 
-    subgraph Ops & Identity
+    subgraph OpsIdentity
         Mon[Azure Monitor + Log Analytics]
         Entra[Microsoft Entra ID]
     end
