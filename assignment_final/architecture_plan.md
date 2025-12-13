@@ -1,6 +1,7 @@
 # Architecture and implementation plan
 
 ## High-level diagram (Mermaid)
+
 ```mermaid
 flowchart LR
     subgraph Client
@@ -13,11 +14,12 @@ flowchart LR
 
     subgraph Storage
         Blob[Azure Blob Storage]
+        EG[Event Grid]
     end
 
     subgraph Compute
         Func[Azure Functions (ETL)]
-        MLN[Azure ML Notebook (scheduled)]
+        MLN[Azure ML (Notebook/Scheduled job)]
     end
 
     subgraph Data
@@ -25,14 +27,15 @@ flowchart LR
         KV[Azure Key Vault]
     end
 
-    subgraph Ops
+    subgraph Ops & Identity
         Mon[Azure Monitor + Log Analytics]
-        AAD[Microsoft Entra ID (Azure AD)]
+        Entra[Microsoft Entra ID]
     end
 
     UI --> APISvc
     APISvc --> Blob
-    Blob -- Event Grid --> Func
+    Blob --> EG
+    EG --> Func
     Func --> SQL
     MLN --> SQL
     APISvc --> SQL
@@ -40,6 +43,6 @@ flowchart LR
     KV --- Func
     Mon --> APISvc
     Mon --> Func
-    AAD --> APISvc
-    AAD --> MLN
-
+    Entra --> APISvc
+    Entra --> SQL
+    Entra --> MLN
