@@ -4,10 +4,10 @@
 
 | Layer        | Service (Cloud)                 | Role in Solution                                           | Related Assignment/Module |
 |--------------|---------------------------------|------------------------------------------------------------|---------------------------|
-| Storage      | Azure Blob Storage              | Store raw uploaded CSV/JSON files from patient devices      | Cloud Storage & IAM       |
+| Storage      | Azure Blob Storage              | Store raw uploaded CSV/JSON files from patient devices      | Module 6       |
 | Compute      | Azure App Service (Flask)       | Run containerized Flask API for uploads and dashboard       | Assignmnet 3/Module 5  |
 | Compute      | Azure Functions (Serverless)    | Event-driven ETL: validate, parse, normalize, load to SQL   | Assignment 3/Module 5 |
-| Database/SQL | Azure SQL Database              | Store cleaned/aggregated tables for reporting and queries   | SQL Schema & Query Labs   |
+| Database/SQL | Azure SQL Database              | Store cleaned/aggregated tables for reporting and queries   | Assignment 4/Module 7   |
 | Analytics/AI | Azure ML Notebook (scheduled)   | Run simple analytics: time-in-range, risk flags, summaries  | Module 7      |
 | Security     | Azure Key Vault + Entra ID      | Manage secrets, credentials, and RBAC for clinicians/staff  | Identity & Governance     |
 | Ops          | Azure Monitor + Log Analytics   | Collect logs, metrics, and alerts for governance            | Monitoring Module         |
