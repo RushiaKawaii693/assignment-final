@@ -8,7 +8,7 @@
 ## Instructions
 1. Read 'use_case.md' to better grasp the healthcare scenario.
 2. Open 'architecture_plan.md' to view the detailed architecture and implementation plan. Render the Mermaid diagram if available, or view 'architecture_diagram.png'.
-3. Read'reflection.md' to gain design insights and future directions.
+3. Read 'reflection.md' to gain design insights and future directions.
 
 ## Notes
 - The project solely uses **synthetic or pseudonymized data**; no real PHI is present.
