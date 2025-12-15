@@ -9,8 +9,8 @@
 | Compute      | Azure Functions (Serverless)    | Event-driven ETL: validate, parse, normalize, load to SQL   | Assignment 3/Module 5 |
 | Database/SQL | Azure SQL Database              | Store cleaned/aggregated tables for reporting and queries   | Assignment 4/Module 7   |
 | Analytics/AI | Azure ML Notebook (scheduled)   | Run simple analytics: time-in-range, risk flags, summaries  | Module 7      |
-| Security     | Azure Key Vault + Entra ID      | Manage secrets, credentials, and RBAC for clinicians/staff  | Identity & Governance     |
-| Ops          | Azure Monitor + Log Analytics   | Collect logs, metrics, and alerts for governance            | Monitoring Module         |
+| Security     | Azure Key Vault + Entra ID      | Manage secrets, credentials, and RBAC for clinicians/staff  |      |
+| Ops          | Azure Monitor + Log Analytics   | Collect logs, metrics, and alerts for governance            | Assignment 4        |
 
 ---
 
